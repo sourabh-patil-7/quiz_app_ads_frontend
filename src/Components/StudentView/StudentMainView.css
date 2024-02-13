@@ -1,0 +1,11 @@
+.mainContainer {
+  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  padding: 0;
+  border: solid;
+  border-width: 0.5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}

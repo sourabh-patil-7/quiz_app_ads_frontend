@@ -1,0 +1,65 @@
+.facultyLogin {
+  text-align: center;
+  border-style: solid;
+  border-color: rgb(16, 117, 143);
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(172, 214, 224);
+}
+.facultyLoginH3 {
+  display: inline-block;
+  width: 160px;
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.facultyLoginButton {
+  /* background-color: rgb(35, 188, 226); */
+  background-color: rgb(16, 117, 143);
+  color: white;
+  width: 100px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.facultyLoginButton:hover {
+  background-color: rgb(111, 200, 223);
+}
+
+.studentLogin {
+  text-align: center;
+  border-style: solid;
+  border-color: rgb(16, 117, 143);
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(172, 214, 224);
+}
+.studentLoginH3 {
+  display: inline-block;
+  width: 160px;
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.studentLoginButton {
+  /* background-color: rgb(35, 188, 226); */
+  background-color: rgb(16, 117, 143);
+  color: white;
+  width: 100px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.studentLoginButton:hover {
+  background-color: rgb(111, 200, 223);
+}

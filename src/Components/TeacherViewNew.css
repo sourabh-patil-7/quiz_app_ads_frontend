@@ -1,0 +1,39 @@
+/* TeacherViewNew.css */
+
+.TeacherView {
+  background-color: #1f2937;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.teacherTextArea,
+.teacherInput,
+.ReactSelect {
+  background-color: #374151;
+  color: #d1d5db;
+  border: 1px solid #6b7280;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.TeacherButton {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.TeacherButton:hover {
+  background-color: #1e40af;
+}
+
+.TeacherButton:focus {
+  outline: none;
+}
+
+/* Customize as needed */
+

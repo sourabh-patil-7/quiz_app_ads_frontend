@@ -1,0 +1,33 @@
+/* Image styling */
+img {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Home content container */
+  .homeContent {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  /* Logout button styling */
+  .LogoutButton {
+    background-color: #4caf50;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .LogoutButton:hover {
+    background-color: #45a049;
+  }
+  
