@@ -12,7 +12,8 @@ import Landing from "./Components/landing/landingPage";
 import AddNewQuiz from "./Components/AddNewQuiz";
 import Home from "./Components/Home/Home.js";
 import Privateroute from "./Components/PrivateRoute.js";
-
+import AllQuiz from "./Components/getReport/Allquiz.js";
+import GetQuizReport from "./Components/getReport/GetQuizReport.js";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
           <Route
             exact
             path="/quiz/:quiz_id"
-            element={<StudentDisplay />}
+            element={<Privateroute><StudentDisplay /></Privateroute>}
           ></Route>
           <Route exact path="/" element={<Landing />}></Route>
           <Route exact path="/studentLogin" element={<StudentLogin />}></Route>
@@ -79,6 +80,24 @@ function App() {
             element={
               <Privateroute>
                 <AddNewQuiz />
+              </Privateroute>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/quiz/report/Allquiz" 
+            element={
+              <Privateroute>
+                <AllQuiz />
+              </Privateroute>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/quiz/report/:quiz_id"
+            element={
+              <Privateroute>
+                <GetQuizReport />
               </Privateroute>
             }
           ></Route>

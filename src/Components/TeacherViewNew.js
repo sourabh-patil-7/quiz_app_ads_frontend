@@ -164,14 +164,14 @@
 
 // export default TeacherViewNew;
 
-
-
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TeacherSidebar from "./Sidebar/TeacherSidebar";
 import Select from "react-select";
+import JoditEditor from "jodit-react";
 
 function TeacherViewNew(props) {
+  const editor = useRef(null);
   const [quizOptions, setQuizOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [finalData, setFinalData] = useState({
@@ -206,6 +206,9 @@ function TeacherViewNew(props) {
       return;
     }
     event.preventDefault();
+    console.log(selectedOption);
+    console.log(typeof selectedOption);
+    finalData.quiz_id = selectedOption;
 
     axios
       .post("http://localhost:5000/questions", finalData)
@@ -220,7 +223,9 @@ function TeacherViewNew(props) {
   }
 
   const handleChange = (event, field) => {
+    // console.log("change");
     const value = event.target.value;
+    // console.log(event.target.value);
     setFinalData((prevData) => ({
       ...prevData,
       [field]: value,
@@ -241,6 +246,15 @@ function TeacherViewNew(props) {
             rows="2"
             onChange={(event) => handleChange(event, "description")}
           ></textarea>
+
+          {/*<JoditEditor
+            className="text-black"
+            name="description"
+            ref={editor}
+            // value={finalData.description}
+            onChange={(event) => handleChange(event, "description")}
+/>*/}
+
           <br />
           <br />
           {[1, 2, 3, 4].map((num) => (

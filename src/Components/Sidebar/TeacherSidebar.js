@@ -86,6 +86,7 @@ function TeacherSidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const logout = () => {
     localStorage.setItem("loggedin", false);
+    localStorage.clear();
     navigate("/");
   };
 
@@ -129,6 +130,13 @@ function TeacherSidebar() {
             className="block py-2 px-4 text-white hover:bg-gray-700"
           >
             Update Existing Question
+          </a>
+
+          <a
+            href="/quiz/report/Allquiz"
+            className="block py-2 px-4 text-white hover:bg-gray-700"
+          >
+            Get Report
           </a>
 
           <a

@@ -80,6 +80,7 @@ function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const logout = () => {
     localStorage.setItem("loggedin", false);
+    localStorage.clear();
     navigate("/");
   };
 

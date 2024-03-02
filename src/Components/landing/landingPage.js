@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./landingPage.css";
 
 function Landing() {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="background bg-gray-100 min-h-screen">
       <h1 className="text-center pt-16 text-4xl font-bold">QuizzFy</h1>
       <div className="flex justify-center items-center">
         <div className="mt-10">
@@ -21,7 +22,7 @@ function Landing() {
           </Link>
         </div>
       </div>
-      <div className="max-w-3xl mx-auto mt-10 px-4">
+      <div className="max-w-3xl mx-auto mt-10 p-4 bg-gray-200 rounded-md">
         <p className="text-gray-700 text-justify">
           QuizzFy is an innovative online platform that redefines the quiz
           experience. Offering a vast array of topics spanning from general

@@ -72,7 +72,7 @@ function StudentLogin() {
         localStorage.setItem("userType", "student");
         localStorage.setItem("user_id", res.data.user_id);
         console.log("Res", res);
-        navigate("/AllQuizPage");
+        navigate("/Home");
       })
       .catch((err) => {
         console.log(err);

@@ -71,7 +71,7 @@ function Login() {
         localStorage.setItem("loggedin", true);
         localStorage.setItem("userType", "faculty");
         console.log("Res", res);
-        navigate("/TeacherViewNew");
+        navigate("/Home");
       })
       .catch((err) => {
         alert("Invalid Credentials");

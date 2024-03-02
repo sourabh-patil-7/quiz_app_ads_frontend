@@ -83,8 +83,8 @@ function Scorecard() {
   const [score, setScore] = useState(0);
   const [resultSubmitted, setResultSubmitted] = useState(false);
   let flag = true;
-
   useEffect(() => {
+    console.log(state.answerSheet);
     if (!resultSubmitted) {
       axios
         .post("http://localhost:5000/questions/calculateAnswer", {
@@ -115,6 +115,7 @@ function Scorecard() {
           }
         })
         .catch((err) => {
+          console.log("something wrong...");
           console.log("Err", err);
         });
     }
