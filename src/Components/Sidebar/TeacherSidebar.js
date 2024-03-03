@@ -117,26 +117,26 @@ function TeacherSidebar() {
             href="/AddNewQuiz"
             className="block py-2 px-4 text-white hover:bg-gray-700"
           >
-            Add New Quiz
+            Create New Quiz
           </a>
           <a
             href="/TeacherViewNew"
             className="block py-2 px-4 text-white hover:bg-gray-700"
           >
-            Add New Question
+            Create New Questions
           </a>
           <a
             href="/TeacherViewUpdate"
             className="block py-2 px-4 text-white hover:bg-gray-700"
           >
-            Update Existing Question
+            Update Questions
           </a>
 
           <a
             href="/quiz/report/Allquiz"
             className="block py-2 px-4 text-white hover:bg-gray-700"
           >
-            Get Report
+            Get Report for quiz
           </a>
 
           <a

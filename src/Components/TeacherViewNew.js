@@ -168,10 +168,8 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import TeacherSidebar from "./Sidebar/TeacherSidebar";
 import Select from "react-select";
-import JoditEditor from "jodit-react";
 
 function TeacherViewNew(props) {
-  const editor = useRef(null);
   const [quizOptions, setQuizOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [finalData, setFinalData] = useState({
@@ -210,6 +208,8 @@ function TeacherViewNew(props) {
     console.log(typeof selectedOption);
     finalData.quiz_id = selectedOption;
 
+    console.log(finalData);
+
     axios
       .post("http://localhost:5000/questions", finalData)
       .then((res) => {
@@ -232,6 +232,13 @@ function TeacherViewNew(props) {
     }));
   };
 
+  // const handleEditorChange = (editorState) => {
+  //   setEditorState(editorState);
+  //   const contentState = editorState.getCurrentContent();
+  //   const contentRaw = convertToRaw(contentState);
+  //   // Update finalData with the contentRaw as needed
+  // };
+
   return (
     <div className="">
       <TeacherSidebar />
@@ -246,14 +253,6 @@ function TeacherViewNew(props) {
             rows="2"
             onChange={(event) => handleChange(event, "description")}
           ></textarea>
-
-          {/*<JoditEditor
-            className="text-black"
-            name="description"
-            ref={editor}
-            // value={finalData.description}
-            onChange={(event) => handleChange(event, "description")}
-/>*/}
 
           <br />
           <br />

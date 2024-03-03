@@ -101,7 +101,7 @@ function Sidebar() {
           Home
         </a>
         <a href="/AllQuizPage" className="block py-4 px-6 hover:bg-gray-700">
-          Select a quiz
+          Give Quiz
         </a>
         <a
           href="/"
@@ -120,7 +120,7 @@ function Sidebar() {
           ☰
         </button>
         <h1 className="text-white w-full text-center text-2xl py-3 px-4">
-          Quiz app
+          QuizzFy
         </h1>
       </div>
     </div>

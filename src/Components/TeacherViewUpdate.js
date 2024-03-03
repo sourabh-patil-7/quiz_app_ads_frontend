@@ -141,6 +141,7 @@ function TeacherViewUpdate() {
     axios
       .get("http://localhost:5000/questions/quizId/" + quizId)
       .then((res) => {
+        if(res.data.length===0) alert(`no questions found in the quiz ${quizId}`);
         setQuestions(res.data);
       })
       .catch((err) => {

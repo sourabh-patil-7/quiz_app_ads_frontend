@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../Sidebar/Sidebar";
+import TeacherSidebar from "../Sidebar/TeacherSidebar";
 
 function AllQuiz() {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ function AllQuiz() {
 
   return (
     <>
-      <Sidebar />
+      <TeacherSidebar />
       <h1 className="text-center mt-5 font-semibold text-3xl text-black">
         Get the report for the quizes
       </h1>

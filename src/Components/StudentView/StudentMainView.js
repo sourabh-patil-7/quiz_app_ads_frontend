@@ -218,6 +218,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
+import { FaArrowLeft, FaArrowRight, FaCheck } from "react-icons/fa";
 
 function StudentDisplay() {
   const navigate = useNavigate();
@@ -274,46 +275,63 @@ function StudentDisplay() {
     });
   };
 
+  const saveAnswer = () => {
+    let i = 0;
+    const newAnswerSheet = [...answerSheet];
+    for (i = 0; i < newAnswerSheet.length; i++) {
+      if (newAnswerSheet[i].q_id === currentQuestion.q_id) {
+        newAnswerSheet[i].answer = currSelectedOption;
+        break;
+      }
+    }
+    if (i === newAnswerSheet.length) {
+      setAnswerSheet(
+        answerSheet.concat({
+          q_id: currentQuestion.q_id,
+          answer: currSelectedOption,
+        })
+      );
+      alert("Answer saved");
+    } else {
+      setAnswerSheet(newAnswerSheet);
+    }
+  };
+
   return (
     <>
       <Sidebar />
-      <div className="h-[90vh] w-full flex justify-center item-center ">
-        <div className="mainContainer w-4/6 m-auto h- bg-slate-500 flex flex-col justify-between  text-white p-8">
+      <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100">
+        <div className="max-w-lg w-full mx-auto p-4">
           <button
-            className="absolute top-0 right-0 mt-4 mr-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            className="absolute top-12 right-0 mt-4 mr-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex items-center"
             onClick={endTest}
           >
-            End Test
+            End Test <FaArrowRight className="ml-2" />
           </button>
 
           <form
             onSubmit={(event) => event.preventDefault()}
             className="text-left"
           >
-            <div className="flex flex-row justify-between">
-              <div className="mb-4">
-                <label className="font-bold">Question No :</label>
-                <input
-                  type="text"
-                  disabled={true}
-                  value={questionCounter + 1}
-                  className="ml-2 bg-gray-200 p-2 rounded text-black"
-                />
-              </div>
-              <div className="timer-container w-1/6 flex items-center bg-gray-800 rounded-full py-1 px-3 text-center">
-                <span className="text-white text-lg font-bold mr-1 text-center">
-                  Timer:
-                </span>
-                <span className="text-white text-center">
-                  {Math.floor(timeLeft / 60)}:
-                  {(timeLeft % 60).toLocaleString("en-US", {
-                    minimumIntegerDigits: 2,
-                    useGrouping: false,
-                  })}
-                </span>
-              </div>
+            <div className="mb-4">
+              <label className="font-bold">Question No :</label>
+              <input
+                type="text"
+                disabled={true}
+                value={questionCounter + 1}
+                className="ml-2 bg-gray-200 p-2 rounded text-black w-16"
+              />
             </div>
-
+            <div className="timer-container mb-4 bg-gray-800 rounded-full py-1 px-3 text-center text-white flex justify-center items-center">
+              <span className="text-lg font-bold mr-1">Timer:</span>
+              <span>
+                {Math.floor(timeLeft / 60)}:
+                {(timeLeft % 60).toLocaleString("en-US", {
+                  minimumIntegerDigits: 2,
+                  useGrouping: false,
+                })}
+              </span>
+            </div>
             <div className="mb-4">
               <label className="font-bold">Question :</label>
               <input
@@ -324,7 +342,7 @@ function StudentDisplay() {
               />
             </div>
             {[1, 2, 3, 4].map((option) => (
-              <div key={option} className="mb-4">
+              <div key={option} className="mb-4 flex items-center">
                 <input
                   type="radio"
                   name="options"
@@ -341,7 +359,7 @@ function StudentDisplay() {
                   type="text"
                   disabled={true}
                   value={currentQuestion[`option${option}`]}
-                  className="bg-gray-200 p-2 rounded text-black"
+                  className="bg-gray-200 p-2 rounded text-black flex-grow"
                 />
               </div>
             ))}
@@ -353,35 +371,15 @@ function StudentDisplay() {
                     setCurrentQuestion(allQuestionOfQuiz[questionCounter - 1]);
                   }
                 }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 flex items-center"
               >
-                Prev
+                <FaArrowLeft className="mr-2" /> Prev
               </button>
               <button
-                onClick={() => {
-                  let i = 0;
-                  const newAnswerSheet = [...answerSheet];
-                  for (i = 0; i < newAnswerSheet.length; i++) {
-                    if (newAnswerSheet[i].q_id === currentQuestion.q_id) {
-                      newAnswerSheet[i].answer = currSelectedOption;
-                      break;
-                    }
-                  }
-                  if (i === newAnswerSheet.length) {
-                    setAnswerSheet(
-                      answerSheet.concat({
-                        q_id: currentQuestion.q_id,
-                        answer: currSelectedOption,
-                      })
-                    );
-                    alert("answer saved");
-                  } else {
-                    setAnswerSheet(newAnswerSheet);
-                  }
-                }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                onClick={saveAnswer}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 flex items-center"
               >
-                Submit
+                <FaCheck className="mr-2" /> Save
               </button>
               <button
                 onClick={() => {
@@ -390,9 +388,9 @@ function StudentDisplay() {
                     setCurrentQuestion(allQuestionOfQuiz[questionCounter + 1]);
                   }
                 }}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center"
               >
-                Next
+                Next <FaArrowRight className="ml-2" />
               </button>
             </div>
           </form>

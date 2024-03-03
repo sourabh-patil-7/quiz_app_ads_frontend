@@ -1,4 +1,3 @@
-import "./App.css";
 import StudentDisplay from "./Components/StudentView/StudentMainView.js";
 import Login from "./Components/Login.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -15,7 +14,6 @@ import Privateroute from "./Components/PrivateRoute.js";
 import AllQuiz from "./Components/getReport/Allquiz.js";
 import GetQuizReport from "./Components/getReport/GetQuizReport.js";
 
-
 function App() {
   return (
     <div className="container">
@@ -24,7 +22,11 @@ function App() {
           <Route
             exact
             path="/quiz/:quiz_id"
-            element={<Privateroute><StudentDisplay /></Privateroute>}
+            element={
+              <Privateroute>
+                <StudentDisplay />
+              </Privateroute>
+            }
           ></Route>
           <Route exact path="/" element={<Landing />}></Route>
           <Route exact path="/studentLogin" element={<StudentLogin />}></Route>
@@ -85,7 +87,7 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/quiz/report/Allquiz" 
+            path="/quiz/report/Allquiz"
             element={
               <Privateroute>
                 <AllQuiz />
