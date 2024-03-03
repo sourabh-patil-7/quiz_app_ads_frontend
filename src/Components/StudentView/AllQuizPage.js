@@ -9,7 +9,7 @@
 //   useEffect(() => {
 //     console.log("Use Effect");
 //     axios
-//       .get("http://localhost:5000/quiz")
+//       .get("https://quizzfy-backend2.onrender.com/quiz")
 //       .then((res) => {
 //         console.log("RES", res.data);
 
@@ -61,8 +61,6 @@
 
 // export default AllQuizPage;
 
-
-
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -75,7 +73,7 @@ function AllQuizPage() {
   useEffect(() => {
     console.log("Use Effect");
     axios
-      .get("http://localhost:5000/quiz")
+      .get("https://quizzfy-backend2.onrender.com/quiz")
       .then((res) => {
         console.log("RES", res.data);
 

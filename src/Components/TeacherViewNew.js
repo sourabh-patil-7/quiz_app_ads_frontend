@@ -32,7 +32,7 @@
 
 //     console.log(finalData);
 //     axios
-//       .post("http://localhost:5000/questions", finalData)
+//       .post("https://quizzfy-backend2.onrender.com/questions", finalData)
 //       .then((res) => {
 //         alert("question created successfully!!!");
 //         window.location.reload();
@@ -45,7 +45,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:5000/quiz")
+//       .get("https://quizzfy-backend2.onrender.com/quiz")
 //       .then((res) => {
 //         console.log("Res", res);
 //         for (let i = 0; i < res.data.length; i++) {
@@ -185,7 +185,7 @@ function TeacherViewNew(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/quiz")
+      .get("https://quizzfy-backend2.onrender.com/quiz")
       .then((res) => {
         const quizOptionsData = res.data.map((quiz) => ({
           label: quiz.quiz_id,
@@ -211,7 +211,7 @@ function TeacherViewNew(props) {
     console.log(finalData);
 
     axios
-      .post("http://localhost:5000/questions", finalData)
+      .post("https://quizzfy-backend2.onrender.com/questions", finalData)
       .then((res) => {
         alert("Question created successfully!!!");
         window.location.reload();

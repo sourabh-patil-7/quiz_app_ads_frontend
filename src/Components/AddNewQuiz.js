@@ -16,7 +16,7 @@
 //           onSubmit={(event) => {
 //             event.preventDefault();
 //             axios
-//               .post("http://localhost:5000/quiz", {
+//               .post("https://quizzfy-backend2.onrender.com/quiz", {
 //                 quiz_id: event.target.quiz_id.value,
 //                 quiz_description: event.target.quiz_description.value,
 //                 user_id: "xyz",
@@ -72,7 +72,7 @@ function AddNewQuiz() {
               const formData = new FormData(event.target);
               const data = Object.fromEntries(formData.entries());
               axios
-                .post("http://localhost:5000/quiz", {
+                .post("https://quizzfy-backend2.onrender.com/quiz", {
                   quiz_id: data.quiz_id,
                   quiz_description: data.quiz_description,
                   user_id: "xyz",

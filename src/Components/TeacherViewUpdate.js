@@ -12,7 +12,10 @@ function SeeQuestions({ data, onUpdate, onDelete }) {
 
   function handleSave() {
     axios
-      .patch("http://localhost:5000/questions/" + question.q_id, question)
+      .patch(
+        "https://quizzfy-backend2.onrender.com/questions/" + question.q_id,
+        question
+      )
       .then((res) => {
         console.log("sent res", res.data);
         onUpdate(question);
@@ -25,7 +28,9 @@ function SeeQuestions({ data, onUpdate, onDelete }) {
 
   function handleDelete() {
     axios
-      .delete("http://localhost:5000/questions/" + question.q_id)
+      .delete(
+        "https://quizzfy-backend2.onrender.com/questions/" + question.q_id
+      )
       .then((res) => {
         console.log("res delete", res);
         onDelete(question.q_id);
@@ -128,7 +133,7 @@ function TeacherViewUpdate() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/quiz")
+      .get("https://quizzfy-backend2.onrender.com/quiz")
       .then((res) => {
         setQuizOptions(res.data.map((quiz) => quiz.quiz_id));
       })
@@ -139,9 +144,10 @@ function TeacherViewUpdate() {
 
   function handleQuizSelection(quizId) {
     axios
-      .get("http://localhost:5000/questions/quizId/" + quizId)
+      .get("https://quizzfy-backend2.onrender.com/questions/quizId/" + quizId)
       .then((res) => {
-        if(res.data.length===0) alert(`no questions found in the quiz ${quizId}`);
+        if (res.data.length === 0)
+          alert(`no questions found in the quiz ${quizId}`);
         setQuestions(res.data);
       })
       .catch((err) => {

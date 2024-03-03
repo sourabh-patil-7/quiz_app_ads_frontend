@@ -9,7 +9,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .post("http://localhost:5000/questions/calculateAnswer", {
+//       .post("https://quizzfy-backend2.onrender.com/questions/calculateAnswer", {
 //         question: state.answerSheet,
 //       })
 //       .then((res) => {
@@ -44,7 +44,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .post("http://localhost:5000/questions/calculateAnswer", {
+//       .post("https://quizzfy-backend2.onrender.com/questions/calculateAnswer", {
 //         question: state.answerSheet,
 //       })
 //       .then((res) => {
@@ -87,9 +87,12 @@ function Scorecard() {
     console.log(state.answerSheet);
     if (!resultSubmitted) {
       axios
-        .post("http://localhost:5000/questions/calculateAnswer", {
-          question: state.answerSheet,
-        })
+        .post(
+          "https://quizzfy-backend2.onrender.com/questions/calculateAnswer",
+          {
+            question: state.answerSheet,
+          }
+        )
         .then((res) => {
           console.log("Res", res);
           setScore(res.data.correct);
@@ -103,7 +106,10 @@ function Scorecard() {
 
           if (flag) {
             axios
-              .post("http://localhost:5000/result", submissionData)
+              .post(
+                "https://quizzfy-backend2.onrender.com/result",
+                submissionData
+              )
               .then((response) => {
                 console.log("Result inserted successfully:", response.data);
                 setResultSubmitted(true); // Set flag to true after successful submission

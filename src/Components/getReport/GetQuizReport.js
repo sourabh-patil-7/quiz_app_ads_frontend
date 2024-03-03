@@ -11,7 +11,7 @@ function GetQuizReport() {
   const fetchQuizResults = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/result/${quiz_id}`
+        `https://quizzfy-backend2.onrender.com/result/${quiz_id}`
       );
       setResults(response.data);
     } catch (error) {

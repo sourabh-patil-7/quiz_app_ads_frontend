@@ -10,7 +10,7 @@ function AllQuiz() {
   useEffect(() => {
     console.log("Use Effect");
     axios
-      .get("http://localhost:5000/quiz")
+      .get("https://quizzfy-backend2.onrender.com/quiz")
       .then((res) => {
         console.log("RES", res.data);
 

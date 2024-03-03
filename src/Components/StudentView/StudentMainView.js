@@ -20,7 +20,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:5000/questions/quizId/" + quiz_id)
+//       .get("https://quizzfy-backend2.onrender.com/questions/quizId/" + quiz_id)
 //       .then((res) => {
 //         console.log("Res", res.data);
 //         setAllQuestionsOfQuiz(res.data);
@@ -234,7 +234,7 @@ function StudentDisplay() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/questions/quizId/" + quiz_id)
+      .get("https://quizzfy-backend2.onrender.com/questions/quizId/" + quiz_id)
       .then((res) => {
         setAllQuestionsOfQuiz(res.data);
         setTotalNoOfQuestions(res.data.length);

@@ -14,7 +14,7 @@
 //                         event.preventDefault();
 //                         console.log(event.target.studentId.value);
 //                         axios
-//                             .post("http://localhost:5000/login/student", {
+//                             .post("https://quizzfy-backend2.onrender.com/login/student", {
 //                                 user_id: event.target.studentId.value,
 //                                 password: event.target.password.value,
 //                             })
@@ -66,7 +66,7 @@ function StudentLogin() {
     e.preventDefault();
     console.log(formData);
     axios
-      .post("http://localhost:5000/login/student", formData)
+      .post("https://quizzfy-backend2.onrender.com/login/student", formData)
       .then((res) => {
         localStorage.setItem("loggedin", true);
         localStorage.setItem("userType", "student");
